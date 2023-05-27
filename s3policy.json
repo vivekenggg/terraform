@@ -1,27 +1,21 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AddPublicReadCannedAcl",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": [
-                    "arn:aws:iam::111122223333:root",
-                    "arn:aws:iam::444455556666:root"
-                ]
-            },
-            "Action": [
-                "s3:PutObject",
-                "s3:PutObjectAcl"
-            ],
-            "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET/*",
-            "Condition": {
-                "StringEquals": {
-                    "s3:x-amz-acl": [
-                        "public-read"
-                    ]
-                }
-            }
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::advterraformbucket1",
+        "arn:aws:s3:::advterraformbucket1/*"
+      ],
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::261951012404:user/Vivek.Ravindranath@unisys.com"
+        ]
+      }
+    }
+  ]
 }
